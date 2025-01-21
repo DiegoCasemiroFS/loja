@@ -17,7 +17,7 @@ public class PedidoController {
     private final PedidoService pedidoService;
 
     @GetMapping("/procurarPorId/{id}")
-    public Pedido procurarPorId(Long id){
+    public Pedido procurarPorId(@PathVariable Long id){
         return pedidoService.procuraPorId(id);
     }
 
@@ -27,17 +27,17 @@ public class PedidoController {
     }
 
     @PostMapping("/cadastrarPedido")
-    public PedidoResponseDto cadastrarPedido(PedidoRequestDto pedidoRequestDto){
+    public PedidoResponseDto cadastrarPedido(@RequestBody PedidoRequestDto pedidoRequestDto){
         return pedidoService.cadastraPedido(pedidoRequestDto);
     }
 
     @PutMapping("/atualizarPedido/{id}")
-    public PedidoResponseDto atualizarPedido(Long id, PedidoRequestDto pedidoRequestDto){
+    public PedidoResponseDto atualizarPedido(@PathVariable Long id, @RequestBody PedidoRequestDto pedidoRequestDto){
         return pedidoService.atualizaPedido(id, pedidoRequestDto);
     }
 
     @DeleteMapping("/deletarPedido/{id}")
-    public void deletaPedido(Long id){
+    public void deletaPedido(@PathVariable Long id){
         pedidoService.deletaPedido(id);
     }
 }
