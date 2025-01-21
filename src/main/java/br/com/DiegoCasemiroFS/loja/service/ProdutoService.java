@@ -31,6 +31,7 @@ public class ProdutoService {
         Produto produtoAtualizado = produtoRepository.findById(id).orElseThrow(ProdutoNaoEncontradoException::new);
         if(produtoAtualizado != null){
             produtoAtualizado.setNome(produtoRequestDto.getNome());
+            produtoAtualizado.setQuantidade(produtoRequestDto.getQuantidade());
             produtoAtualizado.setPreco(produtoRequestDto.getPreco());
             return produtoRepository.save(produtoAtualizado);
         }
