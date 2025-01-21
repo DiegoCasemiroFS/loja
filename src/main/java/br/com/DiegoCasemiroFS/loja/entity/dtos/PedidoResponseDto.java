@@ -1,13 +1,13 @@
 package br.com.DiegoCasemiroFS.loja.entity.dtos;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class PedidoResponseDto {
