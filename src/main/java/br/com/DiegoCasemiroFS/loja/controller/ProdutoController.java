@@ -16,7 +16,7 @@ public class ProdutoController {
     private final ProdutoService produtoService;
 
     @GetMapping("/procurarPorId/{id}")
-    public Produto procurarPorId(Long id){
+    public Produto procurarPorId(@PathVariable Long id){
         return produtoService.procuraPorId(id);
     }
 
@@ -26,17 +26,17 @@ public class ProdutoController {
     }
 
     @PostMapping("/cadastraProduto")
-    public Produto cadastraProduto(Produto produto){
+    public Produto cadastraProduto(@RequestBody Produto produto){
         return produtoService.cadastraProduto(produto);
     }
 
     @PutMapping("/atualizaProduto/{id}")
-    public Produto atualizaProduto(Long id, ProdutoRequestDto produtoRequestDto){
+    public Produto atualizaProduto(@PathVariable Long id, @RequestBody ProdutoRequestDto produtoRequestDto){
         return produtoService.atualizaProduto(id, produtoRequestDto);
     }
 
     @DeleteMapping("/deletaProduto/{id}")
-    public void deletaProduto(Long id){
+    public void deletaProduto(@PathVariable Long id){
         produtoService.deletaProduto(id);
     }
 }
