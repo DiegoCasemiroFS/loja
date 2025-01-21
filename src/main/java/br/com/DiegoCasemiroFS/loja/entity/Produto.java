@@ -4,6 +4,7 @@ import br.com.DiegoCasemiroFS.loja.entity.enums.TipoProduto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,6 +27,8 @@ public class Produto {
 
     @Enumerated(EnumType.STRING)
     private TipoProduto tipo;
+
+    private Integer quantidade;
 
     private BigDecimal preco;
 
