@@ -15,23 +15,23 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public Usuario findById(Long id) {
+    public Usuario procuraPorId(Long id) {
         return usuarioRepository.findById(id).orElseThrow(UsuarioNaoEncontradoException::new);
     }
 
-    public Usuario findByEmail(String email) {
+    public Usuario procuraPorEmail(String email) {
         return usuarioRepository.findByEmail(email);
     }
 
-    public List<Usuario> findAll() {
+    public List<Usuario> listaUsuarios() {
         return usuarioRepository.findAll();
     }
 
-    public Usuario cadastro(Usuario usuario) {
+    public Usuario cadastraUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario atualizaCadastro(Long id, UsuarioRequestDto usuarioRequestDto) {
+    public Usuario atualizaUsuario(Long id, UsuarioRequestDto usuarioRequestDto) {
         Usuario usuario = usuarioRepository.findById(id).orElseThrow(UsuarioNaoEncontradoException::new);
         if (usuario != null) {
             usuario.setEmail(usuarioRequestDto.getEmail());
@@ -44,7 +44,7 @@ public class UsuarioService {
         return null;
     }
 
-    public void delete(Long id) {
+    public void deletaUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
 }
