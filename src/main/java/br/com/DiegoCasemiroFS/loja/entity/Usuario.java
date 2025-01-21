@@ -37,7 +37,6 @@ public class Usuario {
     private Endereco endereco;
 
     @OneToMany(mappedBy = "usuario")
-    @JoinColumn(name = "pedido_id")
     @JsonIgnore
     private List<Pedido> pedido = new ArrayList<>();
 }

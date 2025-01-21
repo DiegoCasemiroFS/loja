@@ -33,7 +33,6 @@ public class Produto {
     private BigDecimal preco;
 
     @OneToMany(mappedBy = "produto")
-    @JoinColumn(name = "pedido_id")
     @JsonIgnore
     private List<Pedido> pedido = new ArrayList<>();
 }
