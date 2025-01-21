@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PedidoRequestDto {
 
-    private Long UsuarioId;
-    private Long ProdutoId;
+    private Long usuarioId;
+    private Long produtoId;
 }
