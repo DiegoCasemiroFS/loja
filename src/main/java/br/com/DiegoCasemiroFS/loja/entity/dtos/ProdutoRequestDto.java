@@ -13,5 +13,7 @@ public class ProdutoRequestDto {
 
     private String nome;
 
+    private Integer quantidade;
+
     private BigDecimal preco;
 }
