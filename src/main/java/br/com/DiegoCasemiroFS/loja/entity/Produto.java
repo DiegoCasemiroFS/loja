@@ -5,12 +5,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Produto {
