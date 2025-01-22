@@ -28,13 +28,13 @@ public class Usuario {
 
     private String senha;
 
-    private boolean admin;
+    @Embedded
+    private Endereco endereco;
 
     @Enumerated(EnumType.STRING)
     private Funcao funcao;
 
-    @Embedded
-    private Endereco endereco;
+    private boolean admin;
 
     @OneToMany(mappedBy = "usuario")
     @JsonIgnore
