@@ -15,12 +15,12 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    @GetMapping("/procurarPorId/{id}")
+    @GetMapping("/procuraPorId/{id}")
     public Usuario procurarPorId(@PathVariable Long id){
         return usuarioService.procuraPorId(id);
     }
 
-    @GetMapping("/procurarPorEmail/{email}")
+    @GetMapping("/procuraPorEmail/{email}")
     public Usuario procurarPorEmail(@RequestBody String email){
         return usuarioService.procuraPorEmail(email);
     }
